@@ -3,4 +3,4 @@ from django.shortcuts import render
 
 
 def ping(request):
-    return HttpResponse("Pong!")
+    return HttpResponse("Pong!\n")
