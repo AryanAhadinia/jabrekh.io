@@ -9,6 +9,23 @@
 
 ### Development
 
+#### Environment Variables
+
+Make sure you have create and filled a `.env.dev` file with the following variables:
+
+```bash
+DEBUG=1
+SECRET_KEY=
+DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
+SQL_ENGINE=django.db.backends.postgresql
+SQL_DATABASE=
+SQL_USER=
+SQL_PASSWORD=
+SQL_HOST=db
+SQL_PORT=5432
+DATABASE=postgres
+```
+
 #### Pre-deployment for Development
 
 ```bash
@@ -36,6 +53,29 @@ docker-compose down -v --remove-orphans
 ```
 
 ### Production
+
+Make sure you have create and filled a `.env.prod` file with the following variables:
+
+```bash
+DEBUG=0
+SECRET_KEY=
+DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
+SQL_ENGINE=django.db.backends.postgresql
+SQL_DATABASE=
+SQL_USER=
+SQL_PASSWORD=
+SQL_HOST=db
+SQL_PORT=5432
+DATABASE=postgres
+```
+
+Also, make sure you have created a `.env.prod.db` file with the following variables same as the ones in `.env.prod`:
+
+```bash
+POSTGRES_USER=
+POSTGRES_PASSWORD=
+POSTGRES_DB=
+```
 
 #### Pre-deployment for Production
 
