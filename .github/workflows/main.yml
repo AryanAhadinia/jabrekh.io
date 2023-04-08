@@ -24,7 +24,7 @@ jobs:
               cd ${{ secrets.PROJECT_PATH }}
               git pull origin main
               make down
+              docker image prune -a -f
               make up
               make collect_static
               make migrate
-              docker image prune -a -f
