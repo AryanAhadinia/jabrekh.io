@@ -12,4 +12,4 @@ FROM nginx:1.18.0-alpine
 
 RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx.conf /etc/nginx/conf.d
-COPY --from=dist /frontend/dist /usr/share/nginx/html
+COPY --from=build /frontend/dist /usr/share/nginx/html
