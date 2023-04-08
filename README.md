@@ -60,5 +60,5 @@ docker-compose -f docker-compose.prod.yml down -v --remove-orphans
 ## Contributors
 
 <a href = "https://github.com/Tanu-N-Prabhu/Python/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo = GitHub_username/jabrekh.io"/>
+  <img src = "https://contrib.rocks/image?repo = AryanAhadinia/jabrekh.io"/>
 </a>
