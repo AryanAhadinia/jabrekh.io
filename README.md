@@ -99,7 +99,8 @@ docker-compose -f docker-compose.prod.yml down -v --remove-orphans
 
 ## Contributors
 
-Aryan Ahadinia and Mohammad Jafari
+- Aryan Ahadinia
+- Mohammad Jafari
 
 ## References
 
