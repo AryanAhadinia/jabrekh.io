@@ -91,6 +91,14 @@ docker-compose -f docker-compose.prod.yml exec web python manage.py collectstati
 docker-compose -f docker-compose.prod.yml exec web python manage.py migrate --noinput
 ```
 
+### Post Deployment
+
+To create superuser, execute command below.
+
+```bash
+docker-compose -f docker-compose.prod.yml exec web python manage.py createsuperuser
+```
+
 #### Server Shutdown for Production
 
 ```bash
