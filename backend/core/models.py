@@ -61,6 +61,7 @@ class TeachingAssisting(models.Model):
 
     class Meta:
         unique_together = ("person", "semester")
+        ordering = ["-semester", "person"]
 
     def __str__(self):
         return f"{str(self.person)} @ {str(self.semester)}"
