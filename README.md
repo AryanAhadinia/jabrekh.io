@@ -109,6 +109,7 @@ docker-compose -f docker-compose.prod.yml exec web python manage.py createsuperu
 
 - Aryan Ahadinia
 - Mohammad Jafari
+- And all TAs of Linear Algebra
 
 ## References
 
