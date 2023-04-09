@@ -8,7 +8,7 @@ migrate:
 	docker-compose -f docker-compose.prod.yml exec -T web python manage.py migrate --noinput
 
 down:
-	docker-compose -f docker-compose.prod.yml down -v --remove-orphans
+	docker-compose -f docker-compose.prod.yml down --remove-orphans
 
 show_logs:
 	docker-compose logs
