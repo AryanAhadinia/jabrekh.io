@@ -49,6 +49,7 @@ class Instruction(models.Model):
 
     class Meta:
         unique_together = ("person", "semester")
+        ordering = ["-semester", "person"]
 
     def __str__(self):
         return f"{str(self.person)} @ {str(self.semester)}"
@@ -74,6 +75,7 @@ class Enrolling(models.Model):
 
     class Meta:
         unique_together = ("person", "semester")
+        ordering = ["-semester", "person"]
 
     def __str__(self):
         return f"{str(self.person)} @ {str(self.semester)}"
