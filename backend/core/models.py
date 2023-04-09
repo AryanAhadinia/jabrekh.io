@@ -28,7 +28,7 @@ class Semester(models.Model):
 
 class Person(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
-    employee_id = models.IntegerField()
+    employee_id = models.IntegerField(unique=True)
     academic_email = models.EmailField()
     github_url = models.URLField(blank=True)
     linkedin_url = models.URLField(blank=True)
