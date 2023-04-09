@@ -58,7 +58,7 @@ class Instruction(models.Model):
 class TeachingAssisting(models.Model):
     person = models.ForeignKey(Person, on_delete=models.CASCADE)
     semester = models.ForeignKey(Semester, on_delete=models.CASCADE)
-    description = models.TextField()
+    description = models.TextField(blank=True)
 
     class Meta:
         unique_together = ("person", "semester")
