@@ -79,3 +79,106 @@ class Enrolling(models.Model):
 
     def __str__(self):
         return f"{str(self.person)} @ {str(self.semester)}"
+
+
+class Material(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+    title = models.CharField(max_length=100)
+    description = models.TextField(blank=True)
+    semester = models.ForeignKey(Semester, on_delete=models.CASCADE)
+
+    class Meta:
+        abstract = True
+
+
+class FileMaterial(Material):
+    ACCESS_CONTROL_CHOICES = (
+        (0, "Public"),
+        (1, "Student"),
+        (2, "TA"),
+        (3, "Admin"),
+    )
+
+    file = models.FileField(upload_to="files/")
+    access_control = models.IntegerField(choices=ACCESS_CONTROL_CHOICES)
+
+    def get_person_access(self, person):
+        if person is None:
+            return 0
+        if person.user.is_superuser:
+            return 3
+        if TeachingAssisting.objects.filter(
+            person=person,
+            semester=self.semester,
+        ).exists():
+            return 2
+        if Enrolling.objects.filter(
+            person=person,
+            semester=self.semester,
+        ).exists():
+            return 1
+        return 0
+
+    def get_user_access(self, user):
+        if user is None:
+            return 0
+        return self.get_person_access(user.person)
+
+    def has_access(self, user):
+        return self.get_user_access(user) >= self.access_control
+
+    def get_file_name(self):
+        original_file_name, file_extension = os.path.splitext(self.file.name)
+        return self.name + file_extension
+
+    def get_url(self):
+        return f"/api/course/file/{self.get_file_name()}"
+
+    def __str__(self):
+        return f"File {self.name} @ {str(self.semester)}"
+
+
+class URLMaterial(Material):
+    url = models.URLField()
+
+    def get_url(self):
+        return self.url
+
+    def __str__(self):
+        return f"URL {self.name} @ {str(self.semester)}"
+
+
+class Session(models.Model):
+    semester = models.ForeignKey(Semester, on_delete=models.CASCADE)
+    title = models.CharField(max_length=100)
+    subtitle = models.TextField()
+    description = models.TextField()
+    files = models.ManyToManyField(
+        FileMaterial, blank=True, related_name="session_files"
+    )
+    urls = models.ManyToManyField(URLMaterial, blank=True, related_name="session_urls")
+
+    def __str__(self):
+        return f"Session {self.title} @ {str(self.semester)}"
+
+
+class Assignment(models.Model):
+    semester = models.ForeignKey(Semester, on_delete=models.CASCADE)
+    title = models.CharField(max_length=100)
+    subtitle = models.TextField()
+    description = models.TextField()
+    questions = models.ForeignKey(
+        FileMaterial, on_delete=models.RESTRICT, related_name="questions"
+    )
+    solutions = models.ForeignKey(
+        FileMaterial, on_delete=models.RESTRICT, related_name="solutions"
+    )
+    files = models.ManyToManyField(
+        FileMaterial, blank=True, related_name="assignment_files"
+    )
+    urls = models.ManyToManyField(
+        URLMaterial, blank=True, related_name="assignment_urls"
+    )
+
+    def __str__(self):
+        return f"Assignment {self.title} @ {str(self.semester)}"
