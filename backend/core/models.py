@@ -171,7 +171,7 @@ class Assignment(models.Model):
         FileMaterial, on_delete=models.RESTRICT, related_name="questions"
     )
     solutions = models.ForeignKey(
-        FileMaterial, on_delete=models.RESTRICT, related_name="solutions"
+        FileMaterial, on_delete=models.RESTRICT, related_name="solutions", blank=True
     )
     files = models.ManyToManyField(
         FileMaterial, blank=True, related_name="assignment_files"
