@@ -99,6 +99,8 @@ docker-compose -f docker-compose.prod.yml down -v --remove-orphans
 
 ## Contributors
 
+Aryan Ahadinia and Mohammad Jafari
+
 ## References
 
 <https://testdriven.io/blog/dockerizing-django-with-postgres-gunicorn-and-nginx/>
