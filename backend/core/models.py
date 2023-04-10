@@ -168,10 +168,10 @@ class Assignment(models.Model):
     subtitle = models.TextField()
     description = models.TextField()
     questions = models.ForeignKey(
-        FileMaterial, on_delete=models.RESTRICT, related_name="questions"
+        FileMaterial, on_delete=models.RESTRICT, related_name="questions", null=True
     )
     solutions = models.ForeignKey(
-        FileMaterial, on_delete=models.RESTRICT, related_name="solutions", blank=True
+        FileMaterial, on_delete=models.RESTRICT, related_name="solutions", null=True
     )
     files = models.ManyToManyField(
         FileMaterial, blank=True, related_name="assignment_files"
