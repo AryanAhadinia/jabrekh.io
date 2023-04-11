@@ -39,3 +39,15 @@ class PersonSerializer(serializers.ModelSerializer):
             "linkedin_url",
             "image",
         ]
+
+
+class InstructionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Instruction
+        fields = ["id", "person", "semester", "description"]
+
+
+class TeachingAssistingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TeachingAssisting
+        fields = ["id", "person", "semester", "description"]
