@@ -11,4 +11,4 @@ down:
 	docker-compose -f docker-compose.prod.yml down --remove-orphans
 
 show_logs:
-	docker-compose logs
+	docker-compose -f docker-compose.prod.yml logs

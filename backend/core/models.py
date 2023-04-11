@@ -43,8 +43,8 @@ class Person(models.Model):
 
 
 class Instruction(models.Model):
-    person = models.ForeignKey(Person, on_delete=models.CASCADE)
-    semester = models.ForeignKey(Semester, on_delete=models.CASCADE)
+    person = models.ForeignKey(Person, on_delete=models.CASCADE, related_name="instructor")
+    semester = models.ForeignKey(Semester, on_delete=models.CASCADE, related_name="instructors")
     description = models.TextField()
 
     class Meta:
@@ -56,8 +56,8 @@ class Instruction(models.Model):
 
 
 class TeachingAssisting(models.Model):
-    person = models.ForeignKey(Person, on_delete=models.CASCADE)
-    semester = models.ForeignKey(Semester, on_delete=models.CASCADE)
+    person = models.ForeignKey(Person, on_delete=models.CASCADE, related_name="teaching_assistant")
+    semester = models.ForeignKey(Semester, on_delete=models.CASCADE, related_name="teaching_assistants")
     description = models.TextField(blank=True)
 
     class Meta:
@@ -69,7 +69,7 @@ class TeachingAssisting(models.Model):
 
 
 class Enrolling(models.Model):
-    person = models.ForeignKey(Person, on_delete=models.CASCADE)
+    person = models.ForeignKey(Person, on_delete=models.CASCADE, related_name="students")
     semester = models.ForeignKey(Semester, on_delete=models.CASCADE)
     description = models.TextField()
 
@@ -168,7 +168,7 @@ class Assignment(models.Model):
     subtitle = models.TextField()
     description = models.TextField()
     questions = models.ForeignKey(
-        FileMaterial, on_delete=models.RESTRICT, related_name="questions"
+        FileMaterial, on_delete=models.RESTRICT, related_name="questions", blank=True
     )
     solutions = models.ForeignKey(
         FileMaterial, on_delete=models.RESTRICT, related_name="solutions", blank=True
