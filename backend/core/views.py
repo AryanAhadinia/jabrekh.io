@@ -18,18 +18,3 @@ def ping(request):
 class SemesterViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Semester.objects.all()
     serializer_class = SemesterSerializer
-
-
-class PersonViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Person.objects.all()
-    serializer_class = PersonSerializer
-
-
-class InstructionViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Instruction.objects.all()
-    serializer_class = InstructionSerializer
-
-
-class TeachingAssistingViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = TeachingAssisting.objects.all()
-    serializer_class = TeachingAssistingSerializer
