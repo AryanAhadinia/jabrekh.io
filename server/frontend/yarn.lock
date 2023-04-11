@@ -876,7 +876,7 @@
     "@chakra-ui/checkbox" "2.2.14"
     "@chakra-ui/shared-utils" "2.0.5"
 
-"@chakra-ui/system@>=2.0.0", "@chakra-ui/system@2.5.5":
+"@chakra-ui/system@^2.5.5", "@chakra-ui/system@>=2.0.0", "@chakra-ui/system@2.5.5":
   version "2.5.5"
   resolved "https://registry.npmjs.org/@chakra-ui/system/-/system-2.5.5.tgz"
   integrity sha512-52BIp/Zyvefgxn5RTByfkTeG4J+y81LWEjWm8jCaRFsLVm8IFgqIrngtcq4I7gD5n/UKbneHlb4eLHo4uc5yDQ==
@@ -1424,10 +1424,10 @@ focus-lock@^0.11.6:
   dependencies:
     tslib "^2.0.3"
 
-framer-motion@^10.11.2, framer-motion@>=4.0.0:
-  version "10.11.2"
-  resolved "https://registry.npmjs.org/framer-motion/-/framer-motion-10.11.2.tgz"
-  integrity sha512-IrwuC9regNOU99JoM/Z62CAMA3awGV6AcF7e3bcgXk/ZoNlGSt5aVq0J7UAwtLmCkwVlRvBkiMnvv2mZ1GW2pg==
+framer-motion@^10.11.4, framer-motion@>=4.0.0:
+  version "10.11.4"
+  resolved "https://registry.npmjs.org/framer-motion/-/framer-motion-10.11.4.tgz"
+  integrity sha512-G69oXNILHETM95lI7UNORG8T7lVN9GnwAf6V8OV7asdWLo7cLVsCFXgPQveWb4fSIDC0FnQQhFnx6blVdmdl3A==
   dependencies:
     tslib "^2.4.0"
   optionalDependencies:
