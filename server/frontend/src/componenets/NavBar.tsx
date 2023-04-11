@@ -24,13 +24,13 @@ const NavBar = () => {
 
   const renderMenuItems = () => (
     <>
-      <Text fontSize="18px" fontWeight="500" pl={35}>
+      <Text fontSize="18px" fontWeight="400" pl={35}>
         Home
       </Text>
-      <Text fontSize="18px" fontWeight="500" pl={35}>
+      <Text fontSize="18px" fontWeight="400" pl={35}>
         Materials
       </Text>
-      <Text fontSize="18px" fontWeight="500" pl={35}>
+      <Text fontSize="18px" fontWeight="400" pl={35}>
         Assignments
       </Text>
     </>

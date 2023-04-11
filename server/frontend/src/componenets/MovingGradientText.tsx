@@ -44,8 +44,8 @@ const MovingGradientText: React.FC<Props> = ({ text }) => {
     return text.split("").map((letter, index) => (
       <Text
         as="span"
-        fontSize="30px"
-        fontWeight="700"
+        fontSize="25px"
+        fontWeight="900"
         textTransform="uppercase"
         css={letterStyle(index)}
         key={`letter-${index}`}
