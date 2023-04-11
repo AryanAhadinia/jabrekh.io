@@ -25,3 +25,17 @@ class SemesterSerializer(serializers.ModelSerializer):
             "description",
             "syllabus",
         ]
+
+
+class PersonSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Person
+        fields = [
+            "id",
+            "user",
+            "employee_id",
+            "academic_email",
+            "github_url",
+            "linkedin_url",
+            "image",
+        ]
