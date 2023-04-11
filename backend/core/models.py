@@ -43,7 +43,7 @@ class Person(models.Model):
 
 
 class Instruction(models.Model):
-    person = models.ForeignKey(Person, on_delete=models.CASCADE, related_name="person")
+    person = models.ForeignKey(Person, on_delete=models.CASCADE, related_name="instructors")
     semester = models.ForeignKey(Semester, on_delete=models.CASCADE)
     description = models.TextField()
 
@@ -56,7 +56,7 @@ class Instruction(models.Model):
 
 
 class TeachingAssisting(models.Model):
-    person = models.ForeignKey(Person, on_delete=models.CASCADE, related_name="person")
+    person = models.ForeignKey(Person, on_delete=models.CASCADE, related_name="teaching_assistants")
     semester = models.ForeignKey(Semester, on_delete=models.CASCADE)
     description = models.TextField(blank=True)
 
@@ -69,7 +69,7 @@ class TeachingAssisting(models.Model):
 
 
 class Enrolling(models.Model):
-    person = models.ForeignKey(Person, on_delete=models.CASCADE, related_name="person")
+    person = models.ForeignKey(Person, on_delete=models.CASCADE, related_name="students")
     semester = models.ForeignKey(Semester, on_delete=models.CASCADE)
     description = models.TextField()
 

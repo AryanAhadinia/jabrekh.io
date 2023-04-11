@@ -14,20 +14,6 @@ from .models import (
 )
 
 
-class SemesterSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Semester
-        fields = [
-            "id",
-            "year",
-            "semester",
-            "title",
-            "subtitle",
-            "description",
-            "syllabus",
-        ]
-
-
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
@@ -63,3 +49,20 @@ class TeachingAssistingSerializer(serializers.ModelSerializer):
     class Meta:
         model = TeachingAssisting
         fields = ["id", "person", "semester", "description", "person"]
+
+
+class SemesterSerializer(serializers.ModelSerializer):
+    instructors = InstructionSerializer(many=True, read_only=True)
+    teaching_assistants = TeachingAssistingSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Semester
+        fields = [
+            "id",
+            "year",
+            "semester",
+            "title",
+            "subtitle",
+            "description",
+            "syllabus",
+        ]
