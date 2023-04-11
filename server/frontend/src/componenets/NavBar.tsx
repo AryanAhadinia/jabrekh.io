@@ -10,6 +10,7 @@ import {
   IconButton,
   useBreakpointValue,
   Portal,
+  Spacer,
   useColorMode,
 } from "@chakra-ui/react";
 import { ChevronDownIcon, HamburgerIcon } from "@chakra-ui/icons";
@@ -59,9 +60,10 @@ const NavBar = () => {
       <MovingGradientText text="LINEAR ALGEBRA" />
       {!isMobile && renderMenuItems()}
       {!isMobile && (
-        <Box pos="absolute" right={padding} bottom={0}>
+        <>
+          <Spacer />
           <ColorModeSwitch />
-        </Box>
+        </>
       )}
     </HStack>
   );
