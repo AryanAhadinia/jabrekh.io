@@ -3,7 +3,6 @@ import { Box, Image, chakra, useColorModeValue } from "@chakra-ui/react";
 import { motion, useAnimation } from "framer-motion";
 import { darken, lighten } from "polished";
 import { keyframes } from "@emotion/react";
-import tinycolor from "tinycolor2";
 
 const MotionBox = chakra(motion.div);
 
