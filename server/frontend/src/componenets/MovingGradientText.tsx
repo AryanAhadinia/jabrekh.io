@@ -32,11 +32,10 @@ const MovingGradientText: React.FC<Props> = ({ text }) => {
 
   const letterStyle = (index: number) => {
     const initialColor = gradientColors[index % gradientColors.length];
-    const animationDelay = (index * 2) % (gradientColors.length * 2);
+    const animationDelay = index % gradientColors.length;
     return css`
       color: ${initialColor};
-      animation: ${ColorShift} ${gradientColors.length * 2}s ease-in-out
-        infinite;
+      animation: ${ColorShift} ${gradientColors.length}s ease-in-out infinite;
       animation-delay: ${animationDelay}s;
     `;
   };
@@ -45,8 +44,8 @@ const MovingGradientText: React.FC<Props> = ({ text }) => {
     return text.split("").map((letter, index) => (
       <Text
         as="span"
-        fontSize="24px"
-        fontWeight="bold"
+        fontSize="30px"
+        fontWeight="700"
         textTransform="uppercase"
         css={letterStyle(index)}
         key={`letter-${index}`}
