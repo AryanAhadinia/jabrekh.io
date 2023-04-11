@@ -14,6 +14,10 @@ const theme = extendTheme({
       },
     }),
   },
+  fonts: {
+    heading: "'Soleil', 'Lato', sans-serif",
+    body: "'Soleil', 'Lato', sans-serif",
+  },
 });
 
 export default theme;
