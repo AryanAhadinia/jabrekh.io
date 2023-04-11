@@ -65,4 +65,6 @@ class SemesterSerializer(serializers.ModelSerializer):
             "subtitle",
             "description",
             "syllabus",
+            "instructors",
+            "teaching_assistants",
         ]
