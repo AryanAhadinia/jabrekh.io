@@ -41,12 +41,16 @@ class PersonSerializer(serializers.ModelSerializer):
 
 
 class InstructionSerializer(serializers.ModelSerializer):
+    person = PersonSerializer()
+
     class Meta:
         model = Instruction
-        fields = ["id", "person", "semester", "description"]
+        fields = ["id", "person", "semester", "description", "person"]
 
 
 class TeachingAssistingSerializer(serializers.ModelSerializer):
+    person = PersonSerializer()
+
     class Meta:
         model = TeachingAssisting
-        fields = ["id", "person", "semester", "description"]
+        fields = ["id", "person", "semester", "description", "person"]
