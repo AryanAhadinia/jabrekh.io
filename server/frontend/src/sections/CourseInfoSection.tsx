@@ -24,7 +24,7 @@ const CourseInfoSection = () => {
   return (
     <Grid
       templateAreas={{
-        base: `'courseInfo' 'object'`,
+        base: `'object' 'courseInfo'`,
         lg: `'courseInfo courseInfo courseInfo object object'`,
       }}
       templateColumns={{
