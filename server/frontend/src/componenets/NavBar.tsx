@@ -25,13 +25,13 @@ const NavBar = () => {
 
   const renderMenuItems = () => (
     <>
-      <Text fontSize="18px" fontWeight="400" pl={35}>
+      <Text fontSize="18px" fontWeight="400" pl={35} cursor="pointer">
         Home
       </Text>
-      <Text fontSize="18px" fontWeight="400" pl={35}>
+      <Text fontSize="18px" fontWeight="400" pl={35} cursor="pointer">
         Materials
       </Text>
-      <Text fontSize="18px" fontWeight="400" pl={35}>
+      <Text fontSize="18px" fontWeight="400" pl={35} cursor="pointer">
         Assignments
       </Text>
     </>

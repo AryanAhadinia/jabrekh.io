@@ -1,18 +1,18 @@
 import React from "react";
-import { HStack, Switch, Text, useColorMode } from "@chakra-ui/react";
+import { HStack, IconButton, useColorMode } from "@chakra-ui/react";
+import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 
 const ColorModeSwitch = () => {
   const { toggleColorMode, colorMode } = useColorMode();
   return (
     <HStack>
-      <Switch
-        // colorScheme="yellow"
-        isChecked={colorMode == "dark"}
-        onChange={toggleColorMode}
+      <IconButton
+        onClick={toggleColorMode}
+        icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+        aria-label={`Switch to ${
+          colorMode === "light" ? "dark" : "light"
+        } mode`}
       />
-      <Text fontSize="18px" fontWeight="400">
-        Dark
-      </Text>
     </HStack>
   );
 };
