@@ -8,7 +8,11 @@ import backgroundImage from "./assets/rabiee-bg.png";
 import PersonCard from "./componenets/PersonCard";
 import Section from "./componenets/Section";
 import CourseInfoSection from "./sections/CourseInfoSection";
+import { Route, Navigate, Routes } from "react-router-dom";
 import "./App.css";
+import Home from "./pages/Home";
+import Materials from "./pages/Materials";
+import Assignments from "./pages/Assignments";
 
 interface Course {
   id: number;
@@ -89,19 +93,12 @@ function App() {
     <>
       <NavBar />
       {/* <CourseInfo /> */}
-      <Section variant="dark">
-        <CourseInfoSection />
-      </Section>
-      <Section>
-        <Center>
-          <PersonCard
-            foreground={foregroundImage}
-            background={backgroundImage}
-            width={300}
-            height={300}
-          />
-        </Center>
-      </Section>
+      <Routes>
+        <Route path="/home" element={<Home />} />
+        <Route path="/materials" element={<Materials />} />
+        <Route path="/assignments" element={<Assignments />} />
+        <Route path="/" element={<Navigate to="/home" />} />
+      </Routes>
     </>
   );
 }
