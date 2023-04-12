@@ -35,12 +35,12 @@ const CourseInfoSection = () => {
         lg: "1fr",
       }}
     >
-      <GridItem area={"courseInfo"} m={10} ref={courseInfoRef}>
+      <GridItem area={"courseInfo"} m={[3, 12]} ref={courseInfoRef}>
         <CourseInfo />
       </GridItem>
       <GridItem
         area={"object"}
-        m={10}
+        m={[3, 12]}
         ref={objectRef}
         h={splineWidth}
         style={{ maxHeight: `${splineWidth}px!importaant`, overflow: "hidden" }} // Set maxHeight equal to the calculated width and hide overflow content

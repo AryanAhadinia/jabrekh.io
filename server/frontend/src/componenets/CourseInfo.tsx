@@ -20,11 +20,14 @@ const CourseInfo = () => {
       <Box flex="9">
         <VStack spacing="6" align="stretch">
           <HStack spacing="2">
-            <Text fontSize="3xl" fontWeight="bold">
+            <Text as="kbd" fontSize={["2xl"]}>
               CE282:
             </Text>
-
-            <Text fontSize="3xl" fontWeight="bold">
+            <Text
+              fontSize="3xl"
+              fontWeight="bold"
+              style={{ whiteSpace: "nowrap" }}
+            >
               Linear Algebra
             </Text>
           </HStack>
