@@ -25,7 +25,7 @@ import { lighten } from "polished";
 type MaterialItemProps = {
   title: string;
   description: string;
-  imageUrl?: ReactNode;
+  imageUrl?: string;
   downloads?: {
     slide?: string;
     video?: string;
