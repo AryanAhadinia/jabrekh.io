@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Spline from "@splinetool/react-spline";
-import { Box, Center, useColorModeValue } from "@chakra-ui/react";
+import { Box, Center, Spinner, useColorModeValue } from "@chakra-ui/react";
 
 type SplineEmbedProps = {
   scene: string;
@@ -15,9 +15,11 @@ const SplineEmbed: React.FC<SplineEmbedProps> = ({
   height = "100%",
 }) => {
   const [splineWidth, setSplineWidth] = useState(width);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const handleResize = () => {
+      setIsLoading(true);
       setSplineWidth(
         `${document.getElementById("spline-container")?.clientWidth}px`
       );
@@ -27,6 +29,10 @@ const SplineEmbed: React.FC<SplineEmbedProps> = ({
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const handleSplineLoad = () => {
+    setIsLoading(false);
+  };
+
   return (
     <Center
       id="spline-container"
@@ -35,7 +41,17 @@ const SplineEmbed: React.FC<SplineEmbedProps> = ({
       minH={splineWidth}
       position={"relative"}
     >
-      <Spline scene={scene} style={{ width: "100%", height: "100%" }} />
+      {isLoading && (
+        <Center position="absolute" top={0} left={0} right={0} bottom={0}>
+          <Spinner />
+        </Center>
+      )}
+      <Spline
+        key={splineWidth}
+        scene={scene}
+        onLoad={handleSplineLoad}
+        style={{ width: "100%", height: "100%" }}
+      />
     </Center>
   );
 };

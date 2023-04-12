@@ -8,12 +8,6 @@ const CourseInfoSection = () => {
   const objectRef = useRef<HTMLDivElement>(null);
   const [splineWidth, setSplineWidth] = useState<number>(0);
 
-  useEffect(() => {
-    if (courseInfoRef.current && objectRef.current) {
-      objectRef.current.style.maxHeight = `${courseInfoRef.current.offsetHeight}px`;
-    }
-  }, [courseInfoRef, objectRef]);
-
   useLayoutEffect(() => {
     const updateSplineWidth = () => {
       if (objectRef.current) {
@@ -38,14 +32,19 @@ const CourseInfoSection = () => {
         lg: "repeat(5, 1fr)",
       }}
       templateRows={{
-        base: "repeat(2, 1fr)",
         lg: "1fr",
       }}
     >
       <GridItem area={"courseInfo"} m={10} ref={courseInfoRef}>
         <CourseInfo />
       </GridItem>
-      <GridItem area={"object"} m={10} ref={objectRef}>
+      <GridItem
+        area={"object"}
+        m={10}
+        ref={objectRef}
+        h={splineWidth}
+        style={{ maxHeight: `${splineWidth}px!importaant`, overflow: "hidden" }} // Set maxHeight equal to the calculated width and hide overflow content
+      >
         <SplineEmbed
           scene="https://prod.spline.design/uyvl9W6Yv2NG4mv7/scene.splinecode"
           width="100%"
