@@ -1,4 +1,6 @@
-# jabrekh.io
+# Jabrekh
+
+Important Fact: Persian equvalent to __Linear Algebra__ is '_Jabr e Khati_'. Persian students of Sharif University of Technology simply pronounce it _Jabrekh_.
 
 ## Deploying
 
