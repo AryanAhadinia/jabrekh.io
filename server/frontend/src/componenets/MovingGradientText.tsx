@@ -32,7 +32,7 @@ const MovingGradientText: React.FC<Props> = ({ text }) => {
 
   const letterStyle = (index: number) => {
     const initialColor = gradientColors[index % gradientColors.length];
-    const animationDelay = index % gradientColors.length;
+    const animationDelay = (index * gradientColors.length) / text.length;
     return css`
       color: ${initialColor};
       animation: ${ColorShift} ${gradientColors.length}s ease-in-out infinite;
