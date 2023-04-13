@@ -35,7 +35,12 @@ const CourseInfoSection = () => {
         lg: "1fr",
       }}
     >
-      <GridItem area={"courseInfo"} m={[3, 12]} ref={courseInfoRef}>
+      <GridItem
+        area={"courseInfo"}
+        m={[3, 0]}
+        ref={courseInfoRef}
+        style={{ maxWidth: `100%`, overflow: "hidden" }} // Fixed the !important syntax
+      >
         <CourseInfo />
       </GridItem>
       <GridItem
@@ -43,7 +48,10 @@ const CourseInfoSection = () => {
         m={[3, 12]}
         ref={objectRef}
         h={splineWidth}
-        style={{ maxHeight: `${splineWidth}px!importaant`, overflow: "hidden" }} // Set maxHeight equal to the calculated width and hide overflow content
+        style={{
+          maxHeight: `${splineWidth}px !importaant`,
+          overflow: "hidden",
+        }} // Set maxHeight equal to the calculated width and hide overflow content
       >
         <SplineEmbed
           scene="https://prod.spline.design/uyvl9W6Yv2NG4mv7/scene.splinecode"

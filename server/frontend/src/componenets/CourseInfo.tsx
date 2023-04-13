@@ -16,7 +16,7 @@ import { TiLocation, TiTime } from "react-icons/ti";
 
 const CourseInfo = () => {
   return (
-    <Box display="flex" flexDirection="row">
+    <Box display="flex" flexDirection="row" overflow={"hidden"}>
       <Box flex="9">
         <VStack spacing="6" align="stretch">
           <HStack spacing="2">

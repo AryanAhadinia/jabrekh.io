@@ -20,7 +20,7 @@ const Materials = () => {
   };
   return (
     <Section variant="dark">
-      <Box ml={[3, 5, 20]} mr={[3, 5, 20]} mb={5}>
+      <Box ml={[3, 5, 5, 5, 0]} mr={[3, 5, 5, 5, 0]} mb={5}>
         {/* <MaterialItem {...material}></MaterialItem>
         <MaterialItem {...material}></MaterialItem>
         <MaterialItem {...material}></MaterialItem>

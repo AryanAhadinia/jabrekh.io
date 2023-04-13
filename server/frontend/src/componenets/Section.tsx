@@ -7,7 +7,7 @@ type SectionProps = {
 };
 
 const Section: React.FC<SectionProps> = ({ children, variant = "light" }) => {
-  const bgColorLight = useColorModeValue("gray.100", "#202020");
+  const bgColorLight = useColorModeValue("#F8F8F8", "#1F1F1F");
   const bgColorDark = useColorModeValue("#FFFFFF", "#121212");
   const textColorLight = useColorModeValue("black", "white");
   const textColorDark = useColorModeValue("black", "white");
@@ -17,7 +17,20 @@ const Section: React.FC<SectionProps> = ({ children, variant = "light" }) => {
 
   return (
     <Box bg={bgColor} color={textColor} p={4} w="100%">
-      {children}
+      <Box
+        w="100%"
+        pl="15px"
+        pr="15px"
+        ml="auto"
+        mr="auto"
+        css={{
+          "@media (min-width: 1200px)": {
+            maxWidth: "70%",
+          },
+        }}
+      >
+        {children}
+      </Box>
     </Box>
   );
 };

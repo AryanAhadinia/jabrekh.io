@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Center } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import NavBar from "./componenets/NavBar";
 import CourseInfo from "./componenets/CourseInfo";
 import foregroundImage from "./assets/rabiee.png";
@@ -91,14 +91,16 @@ function App() {
 
   return (
     <>
-      <NavBar />
-      {/* <CourseInfo /> */}
-      <Routes>
-        <Route path="/home" element={<Home />} />
-        <Route path="/materials" element={<Materials />} />
-        <Route path="/assignments" element={<Assignments />} />
-        <Route path="/" element={<Navigate to="/home" />} />
-      </Routes>
+      <Box>
+        <NavBar />
+        {/* <CourseInfo /> */}
+        <Routes>
+          <Route path="/home" element={<Home />} />
+          <Route path="/materials" element={<Materials />} />
+          <Route path="/assignments" element={<Assignments />} />
+          <Route path="/" element={<Navigate to="/home" />} />
+        </Routes>
+      </Box>
     </>
   );
 }

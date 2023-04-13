@@ -16,6 +16,7 @@ import {
   TabList,
   Tab,
   TabIndicator,
+  Link, // Add this import
 } from "@chakra-ui/react";
 import { ChevronDownIcon, HamburgerIcon } from "@chakra-ui/icons";
 import ColorModeSwitch from "./ColorModeSwitch";
@@ -115,7 +116,22 @@ const NavBar = () => {
   );
 
   return (
-    <HStack m={padding} bgColor={bgColor} alignItems="baseline">
+    <HStack
+      m={padding}
+      bgColor={bgColor}
+      alignItems="baseline"
+      w="100%"
+      pl="15px"
+      pr="15px"
+      ml="auto"
+      mr="auto"
+      maxWidth={"95%"}
+      css={{
+        "@media (min-width: 1200px)": {
+          maxWidth: "70%",
+        },
+      }}
+    >
       {/* <Image></Image> */}
       {isMobile ? renderDropdownMenu() : null}
       <MovingGradientText text="LINEAR ALGEBRA" />
