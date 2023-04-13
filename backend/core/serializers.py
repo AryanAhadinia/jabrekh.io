@@ -6,11 +6,6 @@ from .models import (
     Person,
     Instruction,
     TeachingAssisting,
-    Enrolling,
-    FileMaterial,
-    URLMaterial,
-    Session,
-    Assignment,
 )
 
 
