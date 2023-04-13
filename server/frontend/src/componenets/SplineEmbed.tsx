@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Spline from "@splinetool/react-spline";
 import { Box, Center, Spinner, useColorModeValue } from "@chakra-ui/react";
+import debounce from "lodash/debounce"; // Import debounce
 
 type SplineEmbedProps = {
   scene: string;
@@ -17,13 +18,15 @@ const SplineEmbed: React.FC<SplineEmbedProps> = ({
   const [splineWidth, setSplineWidth] = useState(width);
   const [isLoading, setIsLoading] = useState(true);
 
+  const handleResize = debounce(() => {
+    // Wrap the function with debounce
+    setIsLoading(true);
+    setSplineWidth(
+      `${document.getElementById("spline-container")?.clientWidth}px`
+    );
+  }, 250); // Add a delay of 250ms
+
   useEffect(() => {
-    const handleResize = () => {
-      setIsLoading(true);
-      setSplineWidth(
-        `${document.getElementById("spline-container")?.clientWidth}px`
-      );
-    };
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);

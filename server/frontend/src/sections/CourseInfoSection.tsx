@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useEffect, useRef, useState } from "react";
 import SplineEmbed from "../componenets/SplineEmbed";
 import CourseInfo from "../componenets/CourseInfo";
-import { Grid, GridItem } from "@chakra-ui/react";
+import { Box, Grid, GridItem } from "@chakra-ui/react";
 
 const CourseInfoSection = () => {
   const courseInfoRef = useRef<HTMLDivElement>(null);
@@ -34,24 +34,24 @@ const CourseInfoSection = () => {
       templateRows={{
         lg: "1fr",
       }}
+      maxW="100%"
+      overflow="hidden"
     >
-      <GridItem
-        area={"courseInfo"}
-        m={[3, 0]}
-        ref={courseInfoRef}
-        style={{ maxWidth: `100%`, overflow: "hidden" }} // Fixed the !important syntax
-      >
-        <CourseInfo />
+      <GridItem area={"courseInfo"} m={[3, 0]} ref={courseInfoRef}>
+        <Box maxW="100%" overflow="hidden">
+          <CourseInfo />
+        </Box>
       </GridItem>
       <GridItem
         area={"object"}
-        m={[3, 12]}
+        m={[3, 0]}
         ref={objectRef}
         h={splineWidth}
         style={{
           maxHeight: `${splineWidth}px !importaant`,
+          maxWidth: `100% !importaant`,
           overflow: "hidden",
-        }} // Set maxHeight equal to the calculated width and hide overflow content
+        }}
       >
         <SplineEmbed
           scene="https://prod.spline.design/uyvl9W6Yv2NG4mv7/scene.splinecode"

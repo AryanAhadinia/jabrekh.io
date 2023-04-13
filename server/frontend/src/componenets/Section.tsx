@@ -16,13 +16,15 @@ const Section: React.FC<SectionProps> = ({ children, variant = "light" }) => {
   const textColor = variant === "dark" ? textColorDark : textColorLight;
 
   return (
-    <Box bg={bgColor} color={textColor} p={4} w="100%">
+    <Box bg={bgColor} color={textColor} p={4} maxW="100%">
       <Box
-        w="100%"
+        maxW="100%"
         pl="15px"
         pr="15px"
         ml="auto"
         mr="auto"
+        mt="50px"
+        mb="50px"
         css={{
           "@media (min-width: 1200px)": {
             maxWidth: "70%",

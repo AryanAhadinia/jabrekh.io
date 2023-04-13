@@ -18,7 +18,7 @@ const CourseInfo = () => {
   return (
     <Box display="flex" flexDirection="row" overflow={"hidden"}>
       <Box flex="9">
-        <VStack spacing="6" align="stretch">
+        <VStack spacing="7" align="stretch">
           <HStack spacing="2">
             <Text as="kbd" fontSize={["2xl"]}>
               CE282:
@@ -91,13 +91,13 @@ const CourseInfo = () => {
             </HStack>
           </Text>
           <Text fontSize="md" fontWeight="bold">
-            <HStack ml={3}>
+            <HStack pl={3}>
               <TiTime />
               <Text>Sunday and Tuesday, 10:30-12:00</Text>
             </HStack>
           </Text>
           <Text fontSize="md" fontWeight="bold">
-            <HStack ml={3}>
+            <HStack pl={3}>
               <TiLocation />
               <Text>Education Tower 306</Text>
             </HStack>
