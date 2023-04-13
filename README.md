@@ -115,5 +115,6 @@ docker-compose -f docker-compose.prod.yml exec web python manage.py createsuperu
 
 ## References
 
-<https://testdriven.io/blog/dockerizing-django-with-postgres-gunicorn-and-nginx/>
-<https://towardsdatascience.com/the-easy-python-ci-cd-pipeline-using-docker-compose-and-github-actions-80498f47b341>
+- <https://testdriven.io/blog/dockerizing-django-with-postgres-gunicorn-and-nginx/>
+- <https://towardsdatascience.com/the-easy-python-ci-cd-pipeline-using-docker-compose-and-github-actions-80498f47b341>
+- <https://dzone.com/articles/how-to-fix-django-cors-error>
