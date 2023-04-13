@@ -6,12 +6,6 @@ from .models import (
     Person,
     Instruction,
     TeachingAssisting,
-    Enrolling,
-    Material,
-    FileMaterial,
-    URLMaterial,
-    Session,
-    Assignment,
 )
 
 
@@ -69,16 +63,3 @@ class SemesterSerializer(serializers.ModelSerializer):
             "instructors",
             "teaching_assistants",
         ]
-
-
-class Material(serializers.ModelSerializer):
-    class Meta:
-        model = Material
-        fields = ["name", "title", "description", "semester"]
-
-class FileMaterialSerializer(serializers.ModelSerializer):
-    material = Material()
-
-    class Meta:
-        model = FileMaterial
-        fields = ["name", "title", "description", "semester", "file", "access_control"]
