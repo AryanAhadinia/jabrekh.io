@@ -125,6 +125,7 @@ const NavBar = () => {
       pr="15px"
       ml="auto"
       mr="auto"
+      mb="0px"
       maxWidth={"95%"}
       css={{
         "@media (min-width: 1200px)": {
